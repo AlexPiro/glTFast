@@ -80,7 +80,12 @@ namespace GLTFast
         /// <inheritdoc />
         protected override RootBase ParseJson(string json)
         {
-            s_Parser ??= new GltfJsonUtilityParser();
+            // s_Parser ??= new GltfJsonUtilityParser();
+            // C# 7.3 doesn't support null coalescence operator
+            if(s_Parser == null)
+            {
+                s_Parser = new GltfJsonUtilityParser();
+            }
             return s_Parser.ParseJson(json);
         }
     }
