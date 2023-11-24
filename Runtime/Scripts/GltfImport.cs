@@ -2092,7 +2092,7 @@ namespace GLTFast
                             continue;
                         }
 
-                        m_Logger?.Info(channel.Target.node);
+                        m_Logger?.Info(channel.Target.node.ToString());
 
                         var path = AnimationUtils.CreateAnimationPath(channel.Target.node,m_NodeNames,parentIndex);
 
