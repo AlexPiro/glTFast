@@ -2092,6 +2092,8 @@ namespace GLTFast
                             continue;
                         }
 
+                        m_Logger?.Info(channel.Target.node);
+
                         var path = AnimationUtils.CreateAnimationPath(channel.Target.node,m_NodeNames,parentIndex);
 
                         var times = ((AccessorNativeData<float>) m_AccessorData[sampler.input]).data;
